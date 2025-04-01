@@ -8,5 +8,6 @@ int main(int argc, char *argv[]) {
     scenemain scene;
     scene.show();
 
-    return app.exec();
+    app.exec();
+    return 0;
 }

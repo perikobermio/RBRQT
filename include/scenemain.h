@@ -1,10 +1,13 @@
 
-#include <QApplication>
-
 #ifndef SCENEMAIN_H
 #define SCENEMAIN_H
 
-class scenemain {
+#include <QWidget>
+
+class scenemain : public QWidget
+{
+    Q_OBJECT
+    
 public:
     QWidget* show();
 };

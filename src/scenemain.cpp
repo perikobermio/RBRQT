@@ -32,17 +32,33 @@ QWidget* scenemain::show() {
         "QListWidget { background: rgba(46, 102, 109, 0.5); margin: 0px; padding: 10px; alignment: left; border-radius: 10px; }"
         "QListWidget::item { padding: 10px; font-size: 18px; font-weight: bold; border-radius: 5px; color: white;}"
         "QListWidget::item:selected { background-color: rgba(24, 54, 58, 0.5); color:rgb(204, 206, 211); }"
+        "QListWidget::item:hover { background-color: rgba(30, 70, 75, 0.7); color: rgb(220, 220, 220); }"
         "QListWidget::item:focus { outline: none; }"
         "QListWidget::focus { border: none; outline: none; }"
     );
 
     //new QListWidgetItem(QIcon(":/src/images/exit.png"), "Option 1", listWidget);
-    listWidget->addItem("Hot laps");
-    listWidget->addItem("Tournaments");
-    listWidget->addItem("Options");
-    QListWidgetItem* spacerItem = new QListWidgetItem(listWidget);
-    spacerItem->setFlags(spacerItem->flags() & ~Qt::ItemIsSelectable); // Make it non-selectable
-    listWidget->addItem("Exit");
+    QListWidgetItem* hot_laps       = new QListWidgetItem("Hot laps", listWidget);
+    QListWidgetItem* tournaments    = new QListWidgetItem("Tournaments", listWidget);
+    QListWidgetItem* options        = new QListWidgetItem("Options", listWidget);
+    QListWidgetItem* spacerItem     = new QListWidgetItem("", listWidget);
+    QListWidgetItem* exitItem       = new QListWidgetItem("Exit", listWidget);
+    spacerItem->setFlags(Qt::NoItemFlags); // Make the spacer non-interactive
+
+    QObject::connect(listWidget, &QListWidget::itemClicked, [=](QListWidgetItem* item) {
+        if (item == exitItem) {
+            QApplication::quit();
+        }
+        if (item == tournaments) {
+            QApplication::quit();
+        }
+        if (item == options) {
+            QApplication::quit();
+        }
+        if (item == hot_laps) {
+            QApplication::quit();
+        }
+    });
     
     layout->addWidget(listWidget, 0, Qt::AlignLeft);
     layout->addWidget(imageLabel, 0, Qt::AlignTop | Qt::AlignHCenter);
