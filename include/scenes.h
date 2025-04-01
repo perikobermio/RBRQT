@@ -15,14 +15,13 @@ public:
     ~Scenes();
 
 private slots:
-    void showPage1();
-    void showPage2();
+    void switchScene(QWidget *scene);
     QWidget* sceneMain();
 
 private:
     QStackedWidget *stack;
-    QWidget *page1;
-    QWidget *page2;
-};
+    QWidget *main;
+    QWidget *hotlaps;
+};;
 
 #endif // SCENES_H
