@@ -1,11 +1,11 @@
 #include <QApplication>
-#include "./include/scenemain.h"
+#include "./include/scenes.h"
 
 
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
 
-    scenemain scene;
+    Scenes scene;
     scene.show();
 
     app.exec();
