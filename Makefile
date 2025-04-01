@@ -136,7 +136,8 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exceptions.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
-		main.pro include/sceneMain.h \
+		main.pro include/sceneHotlaps.h \
+		include/sceneMain.h \
 		include/scenes.h main.cpp \
 		src/scenes.cpp
 QMAKE_TARGET  = main
@@ -325,7 +326,7 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents resources.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents include/sceneMain.h include/scenes.h $(DISTDIR)/
+	$(COPY_FILE) --parents include/sceneHotlaps.h include/sceneMain.h include/scenes.h $(DISTDIR)/
 	$(COPY_FILE) --parents main.cpp src/scenes.cpp $(DISTDIR)/
 
 
@@ -395,7 +396,8 @@ main.o: main.cpp include/scenes.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
 
 scenes.o: src/scenes.cpp include/scenes.h \
-		include/sceneMain.h
+		include/sceneMain.h \
+		include/sceneHotlaps.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o scenes.o src/scenes.cpp
 
 qrc_resources.o: qrc_resources.cpp 

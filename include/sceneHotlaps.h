@@ -1,5 +1,5 @@
-#ifndef SCENEMAIN_H
-#define SCENEMAIN_H
+#ifndef SCENEHOTLAPS_H
+#define SCENEHOTLAPS_H
 
 #include <iostream>
 #include <QApplication>
@@ -8,7 +8,7 @@
 #include <QListWidget>
 #include <QVBoxLayout>
 
-QWidget* sceneMain(Scenes *parentScene) {
+QWidget* sceneHotlaps(Scenes *parentScene) {
     QWidget* window     = parentScene->windowPreset();
     QHBoxLayout* layout = new QHBoxLayout(window);
     QLabel* imageLabel  = parentScene->bgPreset(window);
@@ -19,25 +19,25 @@ QWidget* sceneMain(Scenes *parentScene) {
     listWidget = parentScene->listPreset(listWidget);
 
     //new QListWidgetItem(QIcon(":/src/images/exit.png"), "Option 1", listWidget);
-    QListWidgetItem* hot_laps       = new QListWidgetItem("Hot laps", listWidget);
-    QListWidgetItem* tournaments    = new QListWidgetItem("Tournaments", listWidget);
+    QListWidgetItem* race           = new QListWidgetItem("Race", listWidget);
+    QListWidgetItem* car            = new QListWidgetItem("Car", listWidget);
     QListWidgetItem* options        = new QListWidgetItem("Options", listWidget);
     QListWidgetItem* spacerItem     = new QListWidgetItem("", listWidget);
-    QListWidgetItem* exitItem       = new QListWidgetItem("Exit", listWidget);
+    QListWidgetItem* back           = new QListWidgetItem("Back", listWidget);
     spacerItem->setFlags(Qt::NoItemFlags); // Make the spacer non-interactive
 
     QObject::connect(listWidget, &QListWidget::itemClicked, [=](QListWidgetItem* item) {
-        if (item == hot_laps) {
-            parentScene->switchScene(parentScene->hotlaps);
+        if (item == race) {
+            
         }
-        if (item == tournaments) {
+        if (item == car) {
             
         }
         if (item == options) {
             
         }
-        if (item == exitItem) {
-            QApplication::quit();
+        if (item == back) {
+            parentScene->switchScene(parentScene->main);
         }
     });
     
@@ -53,4 +53,4 @@ QWidget* sceneMain(Scenes *parentScene) {
     return window;
 }
 
-#endif // SCENEMAIN_H
+#endif // SCENEHOTLAPS_H
