@@ -1,5 +1,8 @@
 <RCC>
     <qresource prefix="/">
         <file>src/images/bg.jpeg</file>
+        <file>src/images/logo.png</file>
+        <file>src/images/rbr_logo.png</file>
+        <file>src/images/exit.png</file>
     </qresource>
 </RCC>

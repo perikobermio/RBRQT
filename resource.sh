@@ -1,0 +1,1 @@
+rcc resources.qrc -o qrc_resources.cpp
