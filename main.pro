@@ -6,6 +6,6 @@ SOURCES += \
     src/*.cpp
 
 HEADERS += \
-    include/scenes.h
+    include/*.h
 
 RESOURCES += resources.qrc

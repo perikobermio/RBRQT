@@ -14,14 +14,12 @@ public:
     Scenes(QWidget *parent = nullptr);
     ~Scenes();
 
-private slots:
+    QWidget *main;
+    QWidget *hotlaps;
     void switchScene(QWidget *scene);
-    QWidget* sceneMain();
 
 private:
     QStackedWidget *stack;
-    QWidget *main;
-    QWidget *hotlaps;
-};;
+};
 
 #endif // SCENES_H

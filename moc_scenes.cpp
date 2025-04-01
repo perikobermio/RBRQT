@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Scenes_t {
-    QByteArrayData data[6];
-    char stringdata0[45];
+    QByteArrayData data[1];
+    char stringdata0[7];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,16 +32,10 @@ struct qt_meta_stringdata_Scenes_t {
     )
 static const qt_meta_stringdata_Scenes_t qt_meta_stringdata_Scenes = {
     {
-QT_MOC_LITERAL(0, 0, 6), // "Scenes"
-QT_MOC_LITERAL(1, 7, 11), // "switchScene"
-QT_MOC_LITERAL(2, 19, 0), // ""
-QT_MOC_LITERAL(3, 20, 8), // "QWidget*"
-QT_MOC_LITERAL(4, 29, 5), // "scene"
-QT_MOC_LITERAL(5, 35, 9) // "sceneMain"
+QT_MOC_LITERAL(0, 0, 6) // "Scenes"
 
     },
-    "Scenes\0switchScene\0\0QWidget*\0scene\0"
-    "sceneMain"
+    "Scenes"
 };
 #undef QT_MOC_LITERAL
 
@@ -51,47 +45,22 @@ static const uint qt_meta_data_Scenes[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       2,   14, // methods
+       0,    0, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
        0,       // signalCount
 
- // slots: name, argc, parameters, tag, flags
-       1,    1,   24,    2, 0x08 /* Private */,
-       5,    0,   27,    2, 0x08 /* Private */,
-
- // slots: parameters
-    QMetaType::Void, 0x80000000 | 3,    4,
-    0x80000000 | 3,
-
        0        // eod
 };
 
 void Scenes::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-    if (_c == QMetaObject::InvokeMetaMethod) {
-        auto *_t = static_cast<Scenes *>(_o);
-        (void)_t;
-        switch (_id) {
-        case 0: _t->switchScene((*reinterpret_cast< QWidget*(*)>(_a[1]))); break;
-        case 1: { QWidget* _r = _t->sceneMain();
-            if (_a[0]) *reinterpret_cast< QWidget**>(_a[0]) = std::move(_r); }  break;
-        default: ;
-        }
-    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        switch (_id) {
-        default: *reinterpret_cast<int*>(_a[0]) = -1; break;
-        case 0:
-            switch (*reinterpret_cast<int*>(_a[1])) {
-            default: *reinterpret_cast<int*>(_a[0]) = -1; break;
-            case 0:
-                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< QWidget* >(); break;
-            }
-            break;
-        }
-    }
+    (void)_o;
+    (void)_id;
+    (void)_c;
+    (void)_a;
 }
 
 QT_INIT_METAOBJECT const QMetaObject Scenes::staticMetaObject = { {
@@ -120,17 +89,6 @@ void *Scenes::qt_metacast(const char *_clname)
 int Scenes::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QMainWindow::qt_metacall(_c, _id, _a);
-    if (_id < 0)
-        return _id;
-    if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
-            qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
-    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 2)
-            qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
-    }
     return _id;
 }
 QT_WARNING_POP
