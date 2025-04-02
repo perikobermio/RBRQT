@@ -1,5 +1,9 @@
-QT += core gui widgets
-CONFIG += c++11
+
+
+TEMPLATE = lib
+CONFIG += dll
+TARGET = RBRPlugin
+DEFINES += RBRPLUGIN_LIBRARY
 
 SOURCES += \
     main.cpp \ 
