@@ -7,9 +7,6 @@
 #include <QLabel>
 #include <QListWidget>
 
-SceneMain::SceneMain(QWidget* parent) : QMainWindow(parent) {
-    // Implementación del constructor
-}
 
 QWidget* SceneMain::get(Scenes *parentScene) {
     QWidget* window     = parentScene->windowPreset();
@@ -31,6 +28,7 @@ QWidget* SceneMain::get(Scenes *parentScene) {
 
     QObject::connect(listWidget, &QListWidget::itemClicked, [=](QListWidgetItem* item) {
         if (item == hot_laps) {
+            
             parentScene->switchScene(parentScene->hotlaps);
         }
         if (item == tournaments) {
@@ -56,3 +54,6 @@ QWidget* SceneMain::get(Scenes *parentScene) {
     return window;
 }
 
+void SceneMain::preSwitch() {
+    std::cout << "Switching scenes..." << std::endl;
+}

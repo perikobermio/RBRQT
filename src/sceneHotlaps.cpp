@@ -7,10 +7,6 @@
 #include <QLabel>
 #include <QListWidget>
 
-SceneHotlaps::SceneHotlaps(QWidget* parent) : QMainWindow(parent) {
-    // Implementación del constructor
-}
-
 QWidget* SceneHotlaps::get(Scenes *parentScene) {
     QWidget* window     = parentScene->windowPreset();
     QHBoxLayout* layout = new QHBoxLayout(window);
@@ -56,3 +52,6 @@ QWidget* SceneHotlaps::get(Scenes *parentScene) {
     return window;
 }
 
+void SceneHotlaps::preSwitch() {
+    std::cout << "Switching scenes..." << std::endl;
+}

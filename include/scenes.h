@@ -26,6 +26,6 @@ public:
 
 private:
     QStackedWidget *stack;
-};
+};;
 
 #endif // SCENES_H

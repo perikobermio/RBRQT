@@ -13,6 +13,7 @@ Scenes::Scenes(QWidget *parent) : QMainWindow(parent) {
 
     SceneMain       SceneMain;
     SceneHotlaps    SceneHotlaps;
+
     main            = SceneMain.get(this);
     hotlaps         = SceneHotlaps.get(this);
 
@@ -25,7 +26,9 @@ Scenes::Scenes(QWidget *parent) : QMainWindow(parent) {
 Scenes::~Scenes() {}
 
 void Scenes::switchScene(QWidget *scene) {
+    //_scene->preSwitch();
     stack->setCurrentWidget(scene);
+  
 }
 
 

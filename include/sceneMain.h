@@ -12,9 +12,8 @@ class SceneMain : public QMainWindow {
     Q_OBJECT
 
 public:
-    SceneMain(QWidget *parent = nullptr);
-
     QWidget* get(Scenes *parentScene);
+    void preSwitch();
 };
 
 #endif // SCENEMAIN_H

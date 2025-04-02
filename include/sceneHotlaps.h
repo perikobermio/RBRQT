@@ -12,9 +12,8 @@ class SceneHotlaps : public QMainWindow {
     Q_OBJECT
 
 public:
-    SceneHotlaps(QWidget *parent = nullptr);
-
     QWidget* get(Scenes *parentScene);
+    void preSwitch();
 };
 
 #endif // SCENEHOTLAPS_H
