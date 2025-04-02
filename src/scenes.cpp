@@ -11,8 +11,10 @@ Scenes::Scenes(QWidget *parent) : QMainWindow(parent) {
     stack = new QStackedWidget(this);
     showFullScreen();
 
-    main = sceneMain(this);
-    hotlaps = sceneHotlaps(this);
+    SceneMain       SceneMain;
+    SceneHotlaps    SceneHotlaps;
+    main            = SceneMain.get(this);
+    hotlaps         = SceneHotlaps.get(this);
 
     stack->addWidget(main);
     stack->addWidget(hotlaps);
