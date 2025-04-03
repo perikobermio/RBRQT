@@ -18,7 +18,6 @@ public:
 
     QWidget *main;
     QWidget *hotlaps;
-    void switchScene(QWidget *scene);
 
     QWidget*        windowPreset();
     QLabel*         bgPreset(QWidget* window);

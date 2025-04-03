@@ -4,11 +4,11 @@
 #include <iostream>
 #include <QApplication>
 #include <QWidget>
+#include <QDebug>
 #include <QLabel>
 #include <QListWidget>
 
-
-QWidget* SceneMain::get(Scenes *parentScene) {
+QWidget* SceneMain::get(Scenes *parentScene, QStackedWidget *stack) {
     QWidget* window     = parentScene->windowPreset();
     QHBoxLayout* layout = new QHBoxLayout(window);
     QLabel* imageLabel  = parentScene->bgPreset(window);
@@ -28,8 +28,7 @@ QWidget* SceneMain::get(Scenes *parentScene) {
 
     QObject::connect(listWidget, &QListWidget::itemClicked, [=](QListWidgetItem* item) {
         if (item == hot_laps) {
-            
-            parentScene->switchScene(parentScene->hotlaps);
+            stack->setCurrentWidget(parentScene->hotlaps);
         }
         if (item == tournaments) {
             
@@ -52,8 +51,4 @@ QWidget* SceneMain::get(Scenes *parentScene) {
     window->show();
 
     return window;
-}
-
-void SceneMain::preSwitch() {
-    std::cout << "Switching scenes..." << std::endl;
 }
