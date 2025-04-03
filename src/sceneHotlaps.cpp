@@ -7,7 +7,7 @@
 #include <QLabel>
 #include <QListWidget>
 
-QWidget* SceneHotlaps::get(Scenes *parentScene, QStackedWidget *stack) {
+QWidget* SceneHotlaps::get(Scenes *parentScene) {
     QWidget* window     = parentScene->windowPreset();
     QHBoxLayout* layout = new QHBoxLayout(window);
     QLabel* imageLabel  = parentScene->bgPreset(window);
@@ -36,7 +36,7 @@ QWidget* SceneHotlaps::get(Scenes *parentScene, QStackedWidget *stack) {
             
         }
         if (item == back) {
-            stack->setCurrentWidget(parentScene->main);
+            parentScene->stack->setCurrentWidget(parentScene->main);
         }
     });
     

@@ -16,15 +16,14 @@ public:
     Scenes(QWidget *parent = nullptr);
     ~Scenes();
 
+    QStackedWidget *stack;
     QWidget *main;
     QWidget *hotlaps;
 
     QWidget*        windowPreset();
     QLabel*         bgPreset(QWidget* window);
     QListWidget*    listPreset(QListWidget* list);
-
-private:
-    QStackedWidget *stack;
-};;
+    
+};
 
 #endif // SCENES_H

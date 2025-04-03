@@ -8,7 +8,7 @@
 #include <QLabel>
 #include <QListWidget>
 
-QWidget* SceneMain::get(Scenes *parentScene, QStackedWidget *stack) {
+QWidget* SceneMain::get(Scenes *parentScene) {
     QWidget* window     = parentScene->windowPreset();
     QHBoxLayout* layout = new QHBoxLayout(window);
     QLabel* imageLabel  = parentScene->bgPreset(window);
@@ -28,7 +28,7 @@ QWidget* SceneMain::get(Scenes *parentScene, QStackedWidget *stack) {
 
     QObject::connect(listWidget, &QListWidget::itemClicked, [=](QListWidgetItem* item) {
         if (item == hot_laps) {
-            stack->setCurrentWidget(parentScene->hotlaps);
+            parentScene->stack->setCurrentWidget(parentScene->hotlaps);
         }
         if (item == tournaments) {
             

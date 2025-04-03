@@ -12,7 +12,7 @@ class SceneHotlaps : public QMainWindow {
     Q_OBJECT
 
 public:
-    QWidget* get(Scenes *parentScene, QStackedWidget *stack);
+    QWidget* get(Scenes *parentScene);
 };
 
 #endif // SCENEHOTLAPS_H

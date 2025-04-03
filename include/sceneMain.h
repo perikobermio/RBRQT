@@ -12,7 +12,7 @@ class SceneMain : public QMainWindow {
     Q_OBJECT
 
 public:
-    QWidget* get(Scenes *parentScene, QStackedWidget *stack);
+    QWidget* get(Scenes *parentScene);
 };
 
 #endif // SCENEMAIN_H
