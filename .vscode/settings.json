@@ -8,6 +8,8 @@
         "istream": "cpp",
         "functional": "cpp",
         "tuple": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "compare": "cpp",
+        "type_traits": "cpp"
     }
 }

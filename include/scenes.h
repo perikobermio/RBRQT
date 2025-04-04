@@ -8,6 +8,7 @@
 #include <QWidget>
 #include <QLabel>
 #include <QListWidget>
+#include "./scene.h"
 
 class Scenes : public QMainWindow {
     Q_OBJECT
@@ -17,8 +18,8 @@ public:
     ~Scenes();
 
     QStackedWidget *stack;
-    QWidget *main;
-    QWidget *hotlaps;
+    Scene* main;
+    Scene* hotlaps;
 
     QWidget*        windowPreset();
     QLabel*         bgPreset(QWidget* window);

@@ -1,24 +1,22 @@
 #include "./../include/scenes.h"
+#include "./../include/scene.h"
 #include "./../include/sceneMain.h"
 #include "./../include/sceneHotlaps.h"
 
 #include <iostream>
 #include <QWidget>
-#include <QLabel>
+#include <QDebug>
 #include <QListWidget>
 
 Scenes::Scenes(QWidget *parent) : QMainWindow(parent) {
     stack = new QStackedWidget(this);
     showFullScreen();
 
-    SceneMain       SceneMain;
-    SceneHotlaps    SceneHotlaps;
+    main     = new Scene(this, "main");
+    hotlaps  = new Scene(this, "hotlaps");
 
-    main            = SceneMain.get(this);
-    hotlaps         = SceneHotlaps.get(this);
-
-    stack->addWidget(main);
-    stack->addWidget(hotlaps);
+    stack->addWidget(main->widget);
+    stack->addWidget(hotlaps->widget);
 
     setCentralWidget(stack);
 }
