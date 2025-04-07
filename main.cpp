@@ -1,12 +1,14 @@
 #include <QApplication>
-#include "./include/scenes.h"
+#include "./include/scenesManager.h"
 
 
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
 
-    Scenes scene;
+    ScenesManager scene;
     scene.show();
+
+    scene.showFullScreen();
 
     app.exec();
     return 0;
