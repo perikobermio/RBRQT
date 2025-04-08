@@ -31,6 +31,7 @@ void ScenesManager::switchScene(QString origin, QString destiny) {
     if (scenes.contains(origin) && scenes.contains(destiny)) {
         Scene *prevScene = scenes[origin];
         Scene *nextScene = scenes[destiny];
+
         nextScene->preSwitch(prevScene, nextScene);
         setCurrentWidget(nextScene);
     }

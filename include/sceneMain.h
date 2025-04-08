@@ -16,7 +16,7 @@ signals:
     void sceneChanged(QString origin, QString destiny);
 
 private:
-    QListWidget *listWidget;
+    QListWidget *listMenu;
 };
 
 #endif // SCENEMAIN_H

@@ -12,11 +12,11 @@ public:
 
     void preSwitch(Scene* origin, Scene* destiny) override;
 
-    QListWidget *listWidget;
-
 signals:
-    void sceneChanged(QString origin, QString destiny);
-    
+    void sceneChanged(QString origin, QString destiny); 
+
+private:
+    QListWidget *listMenu;
 };
 
 #endif // SCENEHOTLAPS_H

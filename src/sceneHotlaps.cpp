@@ -8,7 +8,7 @@ SceneHotlaps::SceneHotlaps(QWidget *parent) : Scene(parent) {
     QVBoxLayout *layout = new QVBoxLayout(this);
 
     // Create the list widget
-    QListWidget* listMenu = new QListWidget(this);
+    listMenu = new QListWidget(this);
     listMenu->setFixedWidth(this->width() * 0.7);
     listMenu->setStyleSheet(
         "QListWidget { background: rgba(46, 102, 109, 0.5); margin: 0px; padding: 10px; alignment: left; border-radius: 10px; }"
@@ -48,8 +48,9 @@ SceneHotlaps::SceneHotlaps(QWidget *parent) : Scene(parent) {
     setLayout(layout);
 }
 
-void SceneHotlaps::preSwitch(Scene* origin, Scene* destiny) {
-    qDebug() << "Switching to SceneHotlaps from" << origin;
-    //QDebug() << "Switching to SceneHotlaps" << params;
-    //listMenu->setCurrentItem(nullptr);
+void SceneHotlaps::preSwitch(Scene* origin, Scene* self) {
+    Q_UNUSED(origin)
+    Q_UNUSED(self)
+
+    this->listMenu->setCurrentItem(this->listMenu->item(0));
 }

@@ -7,7 +7,7 @@
 
 SceneMain::SceneMain(QWidget *parent) : Scene(parent) {
     QVBoxLayout *layout     = new QVBoxLayout(this);
-    QListWidget* listMenu   = new QListWidget(this);
+    listMenu                = new QListWidget(this);
 
     listMenu->setFixedWidth(this->width() * 0.7);
     listMenu->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding);
@@ -47,6 +47,10 @@ SceneMain::SceneMain(QWidget *parent) : Scene(parent) {
     this->setLayout(layout);
 }
 
-void SceneMain::preSwitch(Scene* origin, Scene* destiny) {
-    //qDebug() << "Main Scene received params:" << params;
+void SceneMain::preSwitch(Scene* origin, Scene* self) {
+    Q_UNUSED(origin)
+    Q_UNUSED(self)
+
+    this->listMenu->clearSelection();
+    this->listMenu->setCurrentItem(nullptr);
 }
