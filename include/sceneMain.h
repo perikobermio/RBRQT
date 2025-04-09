@@ -2,8 +2,11 @@
 #define SCENEMAIN_H
 
 #include "./scene.h"
+#include "./sceneStats.h"
+#include "./sceneOptions.h"
 #include <QListWidget>
 #include <QVBoxLayout>
+#include <QStackedLayout>
 
 class SceneMain : public Scene {
     Q_OBJECT
@@ -16,7 +19,12 @@ signals:
     void sceneChanged(QString origin, QString destiny);
 
 private:
-    QListWidget *listMenu;
+    QListWidget         *listMenu;
+    QWidget             *rightPanel;
+    QStackedLayout      *stackLayout;
+
+    SceneStats          *sceneStats;
+    SceneOptions        *sceneOptions;
 };
 
 #endif // SCENEMAIN_H
