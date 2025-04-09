@@ -6,10 +6,12 @@
 
 SceneStats::SceneStats(QWidget *parent) : Scene(parent) {
     QVBoxLayout *layout = new QVBoxLayout(this);
-    QLabel *label = new QLabel("Stats go here", this);
-    label->setStyleSheet("color: white;");
+    layout->setContentsMargins(0, 0, 0, 0);  // Importante para evitar dobles márgenes
+    layout->setSpacing(10);
+
+    QLabel *label = new QLabel("Stats go here");
+    label->setStyleSheet("color: white; font-size: 16px;");
     layout->addWidget(label);
-    this->setLayout(layout);
 }
 
 void SceneStats::preSwitch(Scene* origin, Scene* self) {

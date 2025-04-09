@@ -9,6 +9,11 @@
 SceneMain::SceneMain(QWidget *parent) : Scene(parent) {
     QHBoxLayout *layout     = new QHBoxLayout(this);
     listMenu                = new QListWidget(this);
+    rightPanel              = new QWidget(this);
+
+    rightPanel->setStyleSheet(
+        "background: rgba(33, 38, 39, 0.5); margin: 0 0 0 20px; alignment: left; border-radius: 10px;"
+    );
 
     layout->setContentsMargins(0, 0, 0, 0);
     layout->setSpacing(0);
@@ -31,7 +36,7 @@ SceneMain::SceneMain(QWidget *parent) : Scene(parent) {
     QListWidgetItem* exitItem       = new QListWidgetItem("Exit", listMenu);
     spacerItem->setFlags(Qt::NoItemFlags); // Make the spacer non-interactive
 
-    rightPanel      = new QWidget(this);
+    
     stackLayout     = new QStackedLayout(rightPanel);
     rightPanel->setLayout(stackLayout);
 
